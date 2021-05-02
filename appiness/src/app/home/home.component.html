@@ -1,0 +1,27 @@
+
+<div class="container">
+        <!-- <div class="card"> -->
+          <div class="card" *ngFor="let order of order_details">
+            <mat-card class="flex-container">
+              <span (click)="orderClick(order)">{{ order.customer_name }}</span> 
+              <span>{{ order.items_ordered }}</span>
+              <span>{{ order.total_amount | currency:'INR' }}</span>
+              <span>{{ order.status }}</span>
+              <span *ngIf="order.status === 'Order Received'">
+                  <button mat-button value="Preparing" color="primary" (click)="getOrderDetails($event,order)">Preparing</button>
+                  <button mat-button value="Ready to Serve" color="accent" (click)="getOrderDetails($event,order)">Ready to Serve</button>
+              </span>
+              <span *ngIf="order.status === 'Preparing'">
+                  <button mat-button value="Order Received" color="primary" (click)="getOrderDetails($event,order)">Order Received</button>
+                  <button mat-button value="Ready to Serve" color="accent" (click)="getOrderDetails($event,order)">Ready to Serve</button>
+              </span>
+              <span *ngIf="order.status === 'Ready to Serve'">
+                  <button mat-button  value="Order Received" color="primary" (click)="getOrderDetails($event,order)">Order Received</button>
+                  <button mat-button value="Preparing" color="accent" (click)="getOrderDetails($event,order)">Preparing</button>
+              </span>
+            </mat-card>
+          </div>
+        <!-- </div> -->
+      </div>
+      
+      

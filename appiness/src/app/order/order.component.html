@@ -1,0 +1,12 @@
+
+<div class="container">
+    <div class="details" *ngFor="let details of order_details.items">
+            <mat-card class="flex-container">
+                <span>{{ details.item_name }}</span>
+                <span>{{ details.price | currency:'INR' }}</span>
+                <span>{{ details.total_price | currency:'INR' }}</span>
+                <span>{{ details.customer_name }}</span>
+                <span>{{ details.delivery_address }}</span>
+            </mat-card>
+    </div>
+</div>

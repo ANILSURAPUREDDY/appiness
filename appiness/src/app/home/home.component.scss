@@ -1,0 +1,20 @@
+.container {
+    margin: 10px 10px;
+}
+
+.card {
+    position: relative; 
+    margin-top:8px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.flex-container {
+    display: flex
+}
+
+.flex-container span {
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+} 
